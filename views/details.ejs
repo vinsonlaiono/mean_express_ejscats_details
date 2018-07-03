@@ -7,17 +7,25 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>The <%= cat[0].name %></h1>
-    <img src="<%= cat[0].image %>" style="width: 200px; border-radius:100px " alt="">
-    <ul>
-        <h4>Age: <%= cat[0].age %></h4>
-        <h4>Favorite Food: <%= cat[0].fav_food %></h4>
-        <h4>Sleeping Spots:</h4>
+
+    
+        <h1>The <%= cat["0"].name %></h1>
+        <img src="<%= cat[0].image %>" style="width: 200px; border-radius:100px " alt="">
         <ul>
-            <% for (var x in spot) { %>
-                <h5><%= spot[x].spots %></h5><br>
-            <% } %>
+            <h4>Age: <%= cat[0].age %></h4>
+            <h4>Favorite Food: <%= cat[0].fav_food %></h4>
+            <h4>Sleeping Spots:</h4>
+            <ul>
+                <% for (var x in cat) { %>
+                    <h3>
+
+                        <%= JSON.stringify(cat[x]['sleep']) %>
+                    </h3>
+                   
+                <% } %>
+            </ul>
         </ul>
-    </ul>
+        
+        
 </body>
 </html>
